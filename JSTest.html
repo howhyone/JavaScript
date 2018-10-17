@@ -1,0 +1,291 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+</head>
+<body>
+	<script type="text/javascript">
+		var condition1 = 1;
+		var greeting = (condition1 == "1")?"lalala":"wawawa";
+		// document.write(greeting);
+	</script>
+	<script type="text/javascript">
+		var day = new Date().getDay();
+		var x = "hahahha";
+		switch(day)
+		{
+			case 6:
+			x = "Today is Saturday";
+			break;
+			case 3:
+			x = "Today is 3";
+			break;
+			default:
+			x = "Today is  other";
+		}
+		// document.write(x);
+	</script>
+	<script type="text/javascript">
+		var person = {fname:"zx", lname:"ll", mname:"mm"};
+		for(var p in person)
+		{
+			// document.write(person[p] + "<br>");
+		}
+	</script>
+	<script type="text/javascript">
+		var text = "111";
+		function message1()
+		{
+			try{
+				adddddalert(text);
+			}
+			catch(err){
+				text = "本页有一个错误。 \n\n";
+				text += "错误描述：" + err.message + "\n\n";
+				text += "点击确定继续。 \n\n";
+				// alert(text);
+			}
+		}
+
+	</script>
+	<!-- <button onclick="message1()">onclick</button> -->
+	<script type="text/javascript">
+		function myFunction()
+		{
+			try
+			{
+				var x = document.getElementById("demo").value;
+				if (x == "") {
+					throw "值为空";
+				}
+				else if (isNaN(x)){
+					 throw "不是数字";
+				}
+				else if (x > 10) {
+					 throw "太大" ;
+				}
+				else  {
+					throw "太小";
+				}
+			}
+			catch(err){
+				var y = document.getElementById("mess").innerHTML = "错误描述：" + err + "。";
+			}
+		}
+	</script>
+	<!-- <h1>我的第一个 JavaScript 程序</h1>
+	<p>请输入 5 到 10 之间的数字：</p>
+	<input id="demo" type="text">
+	<button onclick="myFunction()">测试输入值</button>
+	<p id="mess"></p> -->
+</body>
+
+<head>
+	<script type="text/javascript">
+		function validate_required(field,alerttxt)
+		{
+			with (field)
+			{
+				if (value == null || value == "")
+				 {	
+				 	alert(alerttxt);
+				 	return false;
+				 }
+				 else
+				 {
+				 	return true;
+				 }
+			}
+		}
+		function validate_form(thisform)
+		{
+			if (validate_required(email, "Email must be filled out!") == false)
+			 {
+			 	email.focus();
+			 	return false;
+			 }
+		}
+	</script>
+</head>
+<body>
+<!-- <form action="submitpage.htm" onsubmit="return validate_form(this);" method="post">
+	Email: <input type="text" name="email" size="30">
+	<input type="submit" value="Submit">
+</form> -->
+</body>
+
+<head>
+	<script type="text/javascript">
+		function validate_email(field,alerttxt)
+		{
+			with(field)
+			{
+				apos = value.indexOf("@");
+				dotpos = value.lastIndexOf(".");
+				if (apos <1 || dotpos - apos < 2)
+				 {
+				 	alert(alerttxt);
+				 	return false;
+				 }
+				 else{
+				 	return true;
+				 }
+			}
+		}
+		function validate_form(thisform)
+		{
+			with(thisform)
+			{
+				if (validate_email(email, "Not a valid e-mail address!") == false)
+				 {
+				 	email.focus();
+				 	return false;
+				 }
+			}
+		}
+	</script>
+</head>
+
+<body>
+	<!-- <form action="submitpage.htm" onsubmit="return validate_form(this);" method="post">
+		Email: <input type="text" name="email">
+		<input type="submit">
+	</form> -->
+</body>
+
+<body>
+	<!-- <p>1. 长度限制</p> -->
+<!-- <form name=a onsubmit="return test()"> 
+<textarea name="b" cols="40" rows="6" placeholder="不能超过3个字符！"></textarea>
+<br /> 
+<input type="submit" name="Submit" value="check"> 
+</form> -->
+
+<script language="javascript"> 
+function test() 
+{ 
+if(document.a.b.value.length>3) 
+{ 
+alert("不能超过50个字符！"); 
+document.a.b.focus(); 
+return false; 
+}
+} 
+</script>
+</body>
+
+<body>
+	<!-- <p>Hello World!</p>
+	<div id="main">
+		<p>The DOM is very useful.</p>
+		<p>本地演示<b>getElementByTagName</b>方法。</p>
+	</div>
+	<script type="text/javascript">
+		var x=document.getElementById("main");
+		var y = x.getElementsByTagName("p");
+		document.write('id is main`s div 的第一个文本是:' + y[0].innerHTML);
+	</script> -->
+</body>
+
+<body>
+	<!-- <script type="text/javascript">
+		document.write(Date());
+	</script> -->
+</body>
+
+<body>
+<!-- 	<img id="image" src="./16*16.png">
+
+	<script>
+	document.getElementById("image").src="./imgHD.png";
+	</script> -->
+</body>
+
+<body>
+	<!-- <h1 id="demo">Hello World</h1>
+	<script type="text/javascript">
+		document.getElementById("demo").style.color = "blue";
+	</script>
+	<button onclick="document.getElementById('demo').style.color = 'red'">changeColor</button> -->
+</body>
+
+<body>
+	<!-- <p onclick="this.innerHTML = 'xieixe'">点击该文字</p> -->
+</body>
+
+<body>
+	<!-- <script type="text/javascript">
+		function changeText(id)
+		{
+			id.innerHTML = "xieixe";
+		}
+	</script>
+	<b onclick="changeText(this)"> click</b> -->
+</body>
+
+<body>
+	<!-- <button id="myBtn">dianji</button>
+	<script type="text/javascript">
+		function displayDate()
+		{
+			document.write(Date())
+		}
+		document.getElementById("myBtn").onclick = function(){displayDate()};
+	</script> -->
+</body>
+
+<body>
+	<!-- <script type="text/javascript">
+		function displayDate()
+		{
+			document.write(Date())
+		}
+	</script>
+	<body onload = "document.write('hhahahha')">
+	<body onunload= "displayDate()"> -->
+</body>
+
+<body>
+	<!-- 	<script type="text/javascript">
+		function displayDate()
+		{
+			document.write(Date())
+		}
+	</script>
+	<input type="text" id="fname" onchange="displayDate()"> -->
+</body>
+
+<body>
+	<!-- <script type="text/javascript">
+		function displayDate()
+		{
+			document.write(Date())
+		}
+	</script>
+	<b onmouseover="displayDate()"> hahahaha </b><br>
+	<b onmouseout="document.write('hhahaha')"> hahahaha</b> -->
+</body>
+
+<body>
+	<div id="div1">
+		<p id="p1">这是一个段落</p>
+		<p id="p2">这是另一个段落</p>
+	</div>
+	<script type="text/javascript">
+		var para = document.createElement("p");
+		var node = document.createTextNode("这是新段落。");
+		para.appendChild(node);
+
+		var element = document.getElementById("div1");
+		element.appendChild(para);
+
+		var parent = document.getElementById("div1");
+		var child = document.getElementById("p1");
+		parent.removeChild(child);
+	</script>
+</body>
+</html>
+
+
+
+
